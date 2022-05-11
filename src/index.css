@@ -62,7 +62,7 @@
     
 }
 
-@media (min-width: 380px) {
+@media (min-width: 280px) {
   .HeroImg {
     background-repeat: no-repeat;
     background-size:cover;
@@ -85,7 +85,7 @@
   padding: 1rem;
 }
 
-@media (min-width: 380px) {
+@media (min-width: 280px) {
   .showPassword{
    display: none;
    }
@@ -100,7 +100,7 @@
   padding: 1rem;
 }
 
-@media (min-width: 380px) {
+@media (min-width: 280px) {
   .showPasswordLogin{
    display: none;
    }
@@ -220,7 +220,7 @@
   font-weight: 600;
 }
 
-@media (min-width: 380px) {
+@media (min-width: 280px) {
   .linkCopied {
     top: 16%;
     right: 1%;

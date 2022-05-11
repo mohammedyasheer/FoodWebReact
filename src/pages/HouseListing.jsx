@@ -58,7 +58,6 @@ function HouseListing() {
 
     const onSubmit = async(e) => {
         e.preventDefault()
-        console.log(formData);
         setLoading(true)
        //Store image in file
        const storeImage = async(image) => {
@@ -104,8 +103,7 @@ function HouseListing() {
         setLoading(false)
         toast.error('Imaged Not Uploaded')
         return
-      }) 
-      console.log(imgUrls);
+      })
 
       const formDataCopy = {
           ...formData,

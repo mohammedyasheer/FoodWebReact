@@ -10,7 +10,7 @@ function ListingItem({listing, id, onEdit, onDelete}) {
 
   return (
         <>
-            <li className='list-none card md:w-12/12 sm:w-12/12 my-3'>
+            <li className='list-none card md:w-12/12 sm:w-full my-3'>
                 <ul>
                     <div className='md:flex md:flex-row sm:flex-col sm:flex'>
                         <img src={listing.imgUrls[0]} alt={listing.name} className='md:w-72 sm:w-96 rounded md:max-h-72 cursor-pointer'  onClick={() => navigate(`/paying-guest/${id}`)}/>
