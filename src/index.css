@@ -1,13 +1,263 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.1');
+    box-shadow: theme('boxShadow.xl');
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Spinner */
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #303532 transparent #303532 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero {
+    font-size: 30px;
+}
+
+
+
+.HeroImg {
+    /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)); */
+    /* background-image: url('./images/hero.jpg');
+    height: 100vh; 
+    color: aliceblue; */
+    /* z-index: 0; */
+    background: rgba(0,0,0,0.4) url('./images/hero.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    
+}
+
+@media (min-width: 380px) {
+  .HeroImg {
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    background-position: center top;
+}
+
+}
+
+#id{
+    position: relative;
+}
+
+.showPassword{
+ cursor: pointer;
+  position: absolute;
+  top: 55%;
+  right: 39.5%;
+  padding: 1rem;
+}
+
+@media (min-width: 380px) {
+  .showPassword{
+   display: none;
+   }
+
+}
+
+.showPasswordLogin{
+  cursor: pointer;
+  position: absolute;
+  top: 46%;
+  right: 39.5%;
+  padding: 1rem;
+}
+
+@media (min-width: 380px) {
+  .showPasswordLogin{
+   display: none;
+   }
+
+}
+
+.socialIconDiv {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    /* margin: 1.5rem; */
+    width: 3rem;
+    height: 3rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .socialIconImg {
+    width: 100%;
+  }
+
+  .siginImg{
+      width: 67%;
+      background: rgba(0,0,0,0.4) url('./images/formImg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .signInBg{
+      background: rgba(0,0,0,0.4) url('./images/signIn1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+      background-position: center; 
+  }
+
+  .loginInBg{
+    background: rgba(0,0,0,0.4) url('./images/login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center; 
+  }
+
+  .formButton,
+  .formButtonActive{
+  padding: 5px 20px;
+  background-color: #ffffff;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: 0.5rem 0.5rem 0 0;
+
+  
+  }
+  .formButtonActive {
+    background-color: #313232;
+    color: #ffffff;
+  }
+
+  .houseBg{
+    background: rgba(0,0,0,0.4) url('./images/housebg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center; 
+  }
+
+ 
+.userDetails input{
+  display: block;
+  width: 20rem;
+}
+
+.primaryButton {
+  cursor: pointer;
+  background: #00cc66;
+  border-radius: 1rem;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shareIconDiv {
+  cursor: pointer;
+  position: absolute;
+  top: 8%;
+  right: 15%;
+  z-index: 2;
+  background-color: #00cc66;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkCopied {
+  position: fixed;
+  top: 8%;
+  right: 5%;
+  z-index: 2;
+  background-color: #00cc66;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+@media (min-width: 380px) {
+  .linkCopied {
+    top: 16%;
+    right: 1%;
+    font-weight: 300;
+    padding: 5px 5px;
+  }
+
+}
+
+.pageHeader {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.messageDiv {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.textarea {
+  box-shadow: rgba(0, 0, 0, 0.11);
+  background: #ffffff;
+  height: 22rem;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 2rem;
+  font-size: 1rem;
+}
+
+.changePersonalDetails {
+  cursor: pointer;
+  font-weight: 600;
+  color: #000000;
+  background-color: #44d0d0;
+  border-radius: 5px;
+  
+}
+
