@@ -49,9 +49,9 @@ function SingleHouseListing() {
 
   return (  
 
-
-      <main className='mx-10'>
+      <>
         <NavigationBar />
+      <main className='mx-10'>
         <h1 className='text-4xl'>{listing.name}</h1>
         <p><FontAwesomeIcon icon={faLocation}/>{listing.location ? listing.location : 'Contact Landlord to get the Location'}</p>
         <div className="shareIconDiv" onClick={() =>{
@@ -101,7 +101,7 @@ function SingleHouseListing() {
           </Link>
         )}
       </main>
-   
+      </>
   )
 }
 

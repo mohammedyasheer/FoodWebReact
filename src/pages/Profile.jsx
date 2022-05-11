@@ -60,9 +60,9 @@ function Profile() {
   let mobNav
 
   mobNav = <div className= {showNav ? 'block' : 'hidden'}>
-  <ul className='flex flex-col justify-center items-left h-screen'>
+  <ul className='flex flex-col justify-center h-screen'>
          <Link to='/create-house-listing' className='font-bold mb-9 text-xl'>Add House</Link>
-         <span className='font-bold cursor-pointer px-4 list-none border-b-2 py-3' onClick={onClick}>Logout</span>  
+         <span className='font-bold cursor-pointer  list-none border-b-2 py-3' onClick={onClick}>Logout</span>  
           
      </ul>
 </div>
@@ -115,19 +115,21 @@ function Profile() {
   return (
   <>
   <div className='bg-gray-200'>
-  <div className="container mx-auto">
+  <div className="">
     {/* Navigation */}
  <div className="flex justify-between">
 
-  <Link to='/' className='hero font-bold italic'> <FontAwesomeIcon icon={faPizzaSlice} color='red' />FoodWeb</Link>  
- {mobNav} 
+  <Link to='/' className='hero font-bold italic ml-2'> <FontAwesomeIcon icon={faPizzaSlice} color='red' />FoodWeb</Link>  
+  <div className='pr-16'>
+    {mobNav}
+    </div>
  <div className='sm:hidden lg:inline-block'>
             <ul className='mt-2'>
                 <Link to='/create-house-listing' className='font-bold  px-4'>Add House</Link>
                 <span className=' font-bold cursor-pointer px-4 list-none border-b-2 py-3' onClick={onClick}>Logout</span>  
             </ul>
         </div>
-        <div className='text-4xl mr-2 mt-2 sm:inline-block lg:hidden '>
+        <div className='text-4xl mr-4 mt-2 sm:inline-block lg:hidden '>
           <FontAwesomeIcon icon={faBars} onClick={() => {setShowNav(!showNav)}}/>
         </div>
     </div>

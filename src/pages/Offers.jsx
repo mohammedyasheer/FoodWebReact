@@ -53,7 +53,7 @@ function Offers() {
   return (
     <>
     <Navigation />
-    <div className='mx-20'>
+    <div className='mx-10'>
     {/* offer Slider */}
 
     {loading ? <Spinner /> : listings && listings.length > 0 ? (

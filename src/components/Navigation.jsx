@@ -10,7 +10,7 @@ function Navigation() {
   let mobNav
 
     mobNav = <div className= {showNav ? 'block' : 'hidden'}>
-        <ul className='sm:pr-7 flex flex-col justify-center items-left h-screen lg:hidden'>
+        <ul className='sm:pr-7 flex flex-col justify-center h-screen lg:hidden'>
                 <Link to='/offers' className='font-bold mb-9 text-xl'>Offer </Link>
                 <Link to='/paying-guest' className='font-bold mb-9 text-xl'>Paying Guest</Link>
                 
@@ -19,12 +19,14 @@ function Navigation() {
 
   return (
 
-    <div className="container mx-auto mb-2">
+    <div className="mb-2">
     {/* Navigation */}
  <div className="flex justify-between">
 
- <Link to='/' className='hero font-bold italic'> <FontAwesomeIcon icon={faPizzaSlice} color='red' />FoodWeb</Link>  
- {mobNav}  
+ <Link to='/' className='hero font-bold italic ml-2'> <FontAwesomeIcon icon={faPizzaSlice} color='red' />FoodWeb</Link>  
+ <div className='pr-13'>
+    {mobNav}
+    </div>
  <div className='sm:hidden lg:inline-block'>
             <ul className='mt-2'>
                 <Link to='/offers' className='font-bold  px-4'>Offer </Link>
@@ -32,7 +34,7 @@ function Navigation() {
                  
             </ul>
         </div>
-        <div className='text-4xl mr-2 mt-2 sm:inline-block lg:hidden '>
+        <div className='text-4xl mr-4 mt-2 sm:inline-block lg:hidden '>
           <FontAwesomeIcon icon={faBars} onClick={() => {setShowNav(!showNav)}}/>
         </div>
     </div>

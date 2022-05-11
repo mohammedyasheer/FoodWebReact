@@ -15,10 +15,10 @@ function Navbar() {
     let mobNav
 
     mobNav = <div className= {showNav ? 'block' : 'hidden'}>
-         <ul className='mr-11 flex flex-col justify-center items-left h-screen lg:hidden'>
-                <Link to='/login' className='font-bold text-white mb-9 text-2xl'>LogIn </Link>
-                <Link to='/sign-up' className='font-bold text-white  mb-9 text-2xl'>SignUp </Link>
-                <Link to='/profile' className='font-bold text-white  mb-9 text-2xl'>Profile </Link>
+         <ul className=' flex flex-col justify-center items-center h-screen lg:hidden'>
+         <Link to='/login' className='font-bold text-white mb-9 text-xl'>LogIn </Link>
+                <Link to='/sign-up' className='font-bold text-white  mb-9 text-xl'>SignUp </Link>
+                <Link to='/profile' className='font-bold text-white  mb-9 text-xl'>Profile </Link>
                  
             </ul>
     </div>
@@ -29,12 +29,14 @@ function Navbar() {
     return (
         <>
 <div className=''>
-   <div className="container mx-auto">
+   <div>
        {/* Navigation */}
     <div className="flex justify-between">
   
-     <Link to='/' className='hero font-bold text-white italic'> <FontAwesomeIcon icon={faPizzaSlice} color='red' />FoodWeb</Link>  
-     {mobNav}
+     <Link to='/' className='hero font-bold text-white italic '> <FontAwesomeIcon icon={faPizzaSlice} color='red' />FoodWeb</Link>  
+    <div className='pr-20'>
+    {mobNav}
+    </div>
             <div className='sm:hidden lg:inline-block'>
                 <ul className='mt-2'>
                     <Link to='/login' className='font-bold text-white px-4'>LogIn </Link>
@@ -43,7 +45,8 @@ function Navbar() {
                     
                 </ul>
             </div>
-            <div className='text-4xl mr-2 mt-2 sm:inline-block lg:hidden '>
+    
+            <div className='text-4xl mr-4 mt-2 sm:inline-block lg:hidden '>
             <FontAwesomeIcon icon={faBars} className= 'text-white' onClick={() => {setShowNav(!showNav)}}/>
             </div>
         </div>
