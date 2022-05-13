@@ -6,6 +6,9 @@ import { db } from '../firebase.config'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'  
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
 import { faWifi } from '@fortawesome/free-solid-svg-icons'
@@ -36,6 +39,7 @@ function SingleHouseListing() {
           const docSnap = await getDoc(docRef)
 
           if(docSnap.exists()) {
+            console.log(docSnap.data())
               setListing(docSnap.data())
               setLoading(false)
           }
@@ -67,11 +71,12 @@ function SingleHouseListing() {
        <Swiper slidesPerView={1} pagination={{clickable: true}}>
             {listing.imgUrls.map((url, index) => (
                 <SwiperSlide key={index}>
-                  <div style={{background: `url(${listing.imgUrls[index]}) center no-repeat `, backgroundSize: 'cover', backgroundPosition: 'center'}} className="md:w-72 sm:w-96 rounded md:max-h-72"></div>
+                  <img src={listing.imgUrls[index]} alt={listing.name} />
+
                 </SwiperSlide>
             ))}
           </Swiper>
-          <p>Slide to see more Images</p>
+        
           <p className='mt-5 text-2xl'>What this place offers</p>
           <div className="flex mt-3">
             <div>
