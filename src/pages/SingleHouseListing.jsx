@@ -67,10 +67,11 @@ function SingleHouseListing() {
        <Swiper slidesPerView={1} pagination={{clickable: true}}>
             {listing.imgUrls.map((url, index) => (
                 <SwiperSlide key={index}>
-                  <div style={{background: `url(${listing.imgUrls[index]}) center no-repeat `, backgroundSize: 'cover', backgroundPosition: 'center'}} className="w-full h-screen"></div>
+                  <div style={{background: `url(${listing.imgUrls[index]}) center no-repeat `, backgroundSize: 'cover', backgroundPosition: 'center'}} className="md:w-72 sm:w-96 rounded md:max-h-72"></div>
                 </SwiperSlide>
             ))}
           </Swiper>
+          <p>Slide to see more Images</p>
           <p className='mt-5 text-2xl'>What this place offers</p>
           <div className="flex mt-3">
             <div>
